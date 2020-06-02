@@ -1,0 +1,217 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Profile.ProfileActivity">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:id="@+id/profileActivityRoute"
+        android:layout_height="match_parent">
+        <TextView
+            android:id="@+id/txtProfileToolbarUsername"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:text="oguncanky"
+            android:textColor="@color/black"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="@+id/imgProfileToolbarDiscover"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/imgProfileToolbarSettings" />
+
+        <ImageView
+            android:id="@+id/imgProfileToolbarDiscover"
+            android:layout_width="35dp"
+            android:layout_height="35dp"
+            android:layout_marginEnd="16dp"
+            app:layout_constraintBottom_toBottomOf="@+id/imgProfileToolbarSettings"
+            app:layout_constraintEnd_toStartOf="@+id/imgProfileToolbarSettings"
+            app:layout_constraintTop_toTopOf="@+id/imgProfileToolbarSettings"
+            app:srcCompat="@drawable/ic_discover_people" />
+
+        <ImageView
+            android:id="@+id/imgProfileToolbarSettings"
+            android:layout_width="35dp"
+            android:layout_height="35dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="8dp"
+
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:srcCompat="@drawable/ic_profile_options" />
+
+        <View
+            android:id="@+id/view"
+            android:layout_width="match_parent"
+            android:layout_height="2dp"
+            android:layout_marginTop="4dp"
+            android:background="@color/colorPrimaryDark"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/imgProfileToolbarDiscover" />
+
+        <de.hdodenhof.circleimageview.CircleImageView
+            android:id="@+id/imgRegisterPhoto"
+            android:layout_width="96dp"
+            android:layout_height="96dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="16dp"
+            android:src="@drawable/ic_profile"
+            app:civ_border_color="@color/colorPrimaryDark"
+            app:civ_border_width="2dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/view" />
+
+        <TextView
+            android:id="@+id/txtProfileShareCount"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="64dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="32dp"
+            android:text="9"
+            android:textColor="@color/black"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toStartOf="@+id/txtProfileFollower"
+            app:layout_constraintStart_toEndOf="@+id/imgRegisterPhoto"
+            app:layout_constraintTop_toTopOf="@+id/imgRegisterPhoto" />
+
+        <TextView
+            android:id="@+id/txtProfileFollower"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="32dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="32dp"
+            android:text="575"
+            android:textColor="@color/black"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toStartOf="@+id/txtProfileFollow"
+            app:layout_constraintHorizontal_bias="0.56"
+            app:layout_constraintStart_toEndOf="@+id/txtProfileShareCount"
+            app:layout_constraintTop_toTopOf="@+id/imgRegisterPhoto" />
+
+        <TextView
+            android:id="@+id/txtProfileFollow"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="32dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="48dp"
+            android:text="520"
+            android:textColor="@color/black"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="@+id/txtProfileFollower"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/txtProfileFollower"
+            app:layout_constraintTop_toTopOf="@+id/imgRegisterPhoto"
+            app:layout_constraintVertical_bias="0.0" />
+
+        <TextView
+            android:id="@+id/textView7"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="4dp"
+            android:text="Gönderiler"
+            android:textColor="@color/black"
+            app:layout_constraintEnd_toEndOf="@+id/txtProfileShareCount"
+            app:layout_constraintStart_toStartOf="@+id/txtProfileShareCount"
+            app:layout_constraintTop_toBottomOf="@+id/txtProfileShareCount" />
+
+        <TextView
+            android:id="@+id/textView8"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="4dp"
+            android:text="Takipçi"
+            android:textColor="@color/black"
+            app:layout_constraintEnd_toEndOf="@+id/txtProfileFollower"
+            app:layout_constraintStart_toStartOf="@+id/txtProfileFollower"
+            app:layout_constraintTop_toBottomOf="@+id/txtProfileFollower" />
+
+        <TextView
+            android:id="@+id/textView9"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="4dp"
+            android:text="Takip"
+            android:textColor="@color/black"
+            app:layout_constraintEnd_toEndOf="@+id/txtProfileFollow"
+            app:layout_constraintStart_toStartOf="@+id/txtProfileFollow"
+            app:layout_constraintTop_toBottomOf="@+id/txtProfileFollow" />
+
+        <TextView
+            android:id="@+id/txtProfileEditProfile"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginEnd="16dp"
+            android:background="@drawable/edit_profile_button_background"
+            android:padding="8dp"
+            android:text="Profili Düzenle"
+            android:textAlignment="center"
+            android:textColor="@color/black"
+            app:layout_constraintBottom_toBottomOf="@+id/imgRegisterPhoto"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/imgRegisterPhoto" />
+
+        <TextView
+            android:id="@+id/txtProfileRealName"
+            android:layout_width="300dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="16dp"
+            android:text="Ogün Can KAYA"
+            android:textColor="@color/black"
+            android:textStyle="bold"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/imgRegisterPhoto" />
+
+        <TextView
+            android:id="@+id/txtProfilePersonInfos"
+            android:layout_width="300dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="4dp"
+            android:text="software engineering"
+            android:textColor="@color/black"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/txtProfileRealName" />
+
+        <com.ittianyu.bottomnavigationviewex.BottomNavigationViewEx
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:id="@+id/profileBottomNavigationView"
+            android:background="@drawable/toolbar_elevation"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:menu="@menu/bottom_navigation_menu" />
+
+        <ProgressBar
+            android:id="@+id/progressBarProfile"
+            style="?android:attr/progressBarStyle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintBottom_toBottomOf="@+id/imgRegisterPhoto"
+            app:layout_constraintEnd_toEndOf="@+id/imgRegisterPhoto"
+            app:layout_constraintStart_toStartOf="@+id/imgRegisterPhoto"
+            app:layout_constraintTop_toTopOf="@+id/imgRegisterPhoto" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <FrameLayout
+        android:id="@+id/profileActivityContainer"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"></FrameLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

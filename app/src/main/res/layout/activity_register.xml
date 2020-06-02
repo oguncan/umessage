@@ -1,0 +1,138 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Login.RegisterActivity">
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/registerActivityRoute">
+
+        <ImageView
+            android:id="@+id/imgRegisterPhoto"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:layout_marginTop="48dp"
+            android:src="@drawable/ic_logo"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/txtRegisterTelephone"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="56dp"
+            android:layout_marginTop="24dp"
+            android:padding="8dp"
+            android:text="TELEFON"
+            android:textColor="@color/black"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/imgRegisterPhoto" />
+
+        <TextView
+            android:id="@+id/txtRegisterMail"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="24dp"
+            android:layout_marginEnd="56dp"
+            android:padding="8dp"
+            android:text="E-POSTA"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/imgRegisterPhoto" />
+
+        <View
+            android:id="@+id/viewRegisterMail"
+            android:layout_width="185dp"
+            android:layout_height="2dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginEnd="16dp"
+            android:background="@color/colorPrimaryDark"
+            android:visibility="visible"
+            app:layout_constraintEnd_toEndOf="@+id/txtRegisterMail"
+            app:layout_constraintStart_toStartOf="@+id/txtRegisterMail"
+            app:layout_constraintTop_toBottomOf="@+id/txtRegisterMail"></View>
+
+        <View
+            android:id="@+id/viewRegisterTelephone"
+            android:layout_width="185dp"
+            android:layout_height="2dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="16dp"
+            android:background="@color/black"
+            android:visibility="visible"
+            app:layout_constraintEnd_toEndOf="@+id/txtRegisterTelephone"
+            app:layout_constraintStart_toStartOf="@+id/txtRegisterTelephone"
+            app:layout_constraintTop_toBottomOf="@+id/txtRegisterTelephone"></View>
+
+        <View
+            android:id="@+id/view3"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:background="@drawable/toolbar_elevation"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"></View>
+
+        <TextView
+            android:id="@+id/txtRegisterSignIn"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginBottom="8dp"
+            android:text="Hesabın zaten var mı? Giriş Yap."
+            android:textAlignment="center"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="@+id/view3"
+            app:layout_constraintStart_toStartOf="@+id/view3"
+            app:layout_constraintTop_toTopOf="@+id/view3" />
+
+        <EditText
+            android:id="@+id/editTextRegisterTelephoneOrMail"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="24dp"
+            android:layout_marginTop="24dp"
+            android:layout_marginEnd="24dp"
+            android:backgroundTint="@color/blue"
+            android:ems="10"
+            android:hint="Telefon"
+            android:inputType="phone"
+            android:text="+90"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/viewRegisterTelephone" />
+
+        <Button
+            android:id="@+id/btnRegisterNext"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:background="@drawable/edit_profile_button_background"
+            android:text="İleri"
+            android:textColor="@color/shadow"
+            android:enabled="false"
+            app:layout_constraintEnd_toEndOf="@+id/editTextRegisterTelephoneOrMail"
+            app:layout_constraintStart_toStartOf="@+id/editTextRegisterTelephoneOrMail"
+            app:layout_constraintTop_toBottomOf="@+id/editTextRegisterTelephoneOrMail" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <FrameLayout
+        android:id="@+id/registerActivityContainer"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:visibility="visible"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+</androidx.constraintlayout.widget.ConstraintLayout>
