@@ -1,5 +1,5 @@
 # umessage Firebase, UniversalImageLoader, CircleImageView, BottomNavigationViewEx is used!
-# and! im working still on this project. im gonna end!
+# and! im still working on this project.. im gonna end!
 <table><tr>
 <td><img src="https://github.com/oguncan/umessage/blob/master/umessageImages/1.jpg" width="50%"/> </td>
 <td><img src="https://github.com/oguncan/umessage/blob/master/umessageImages/2.jpg" width="50%"/></td>
