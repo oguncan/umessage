@@ -128,8 +128,6 @@ class RegisterActivity : AppCompatActivity(), FragmentManager.OnBackStackChanged
         })
         btnRegisterNext.setOnClickListener {
             if(editTextRegisterTelephoneOrMail.hint.toString().equals("Telefon")){
-
-
                 if(isValidTelephone(editTextRegisterTelephoneOrMail.text.toString())){
                     var isThereTelephoneNumber = false
                     mRef.child("Accounts").addListenerForSingleValueEvent(object:ValueEventListener{
@@ -180,6 +178,7 @@ class RegisterActivity : AppCompatActivity(), FragmentManager.OnBackStackChanged
                         override fun onCancelled(p0: DatabaseError) {
                         }
                         override fun onDataChange(p0: DataSnapshot) {
+
                             if(p0.getValue()!=null){
                                 for(user in p0.children){
                                     var account = user.getValue(Account::class.java)
@@ -189,7 +188,9 @@ class RegisterActivity : AppCompatActivity(), FragmentManager.OnBackStackChanged
                                         break
                                     }
                                 }
+                                isUseThisEmail = false
                                 if(isUseThisEmail == false){
+
                                     registerActivityRoute.visibility = View.GONE
                                     registerActivityContainer.visibility = View.VISIBLE
                                     var transaction = supportFragmentManager.beginTransaction()
@@ -200,9 +201,7 @@ class RegisterActivity : AppCompatActivity(), FragmentManager.OnBackStackChanged
                                 }
                             }
                         }
-
                     })
-
                     }
                 else{
                     Toast.makeText(this, "Mail adresinizi uygun şekilde giriniz.", Toast.LENGTH_LONG).show()

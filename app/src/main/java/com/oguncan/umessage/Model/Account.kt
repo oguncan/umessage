@@ -9,6 +9,7 @@ class Account {
     var accountTelephoneNumber : String? = null
     var telephoneUseAsEmail : String? = null
     var accountUID : String? = null
+    var accountDetails : AccountDetails? =  null
 
     constructor() {}
 
@@ -18,7 +19,8 @@ class Account {
                 accountUsername : String,
                 accountTelephoneNumber: String,
                 telephoneUseAsEmail:String,
-                accountUID: String){
+                accountUID: String,
+                accountDetails:AccountDetails){
 
         this.accountMailAddress = accountMailAddress
         this.accountNameAndSurname = accountNameAndSurname
@@ -27,6 +29,7 @@ class Account {
         this.accountTelephoneNumber = accountTelephoneNumber
         this.telephoneUseAsEmail = telephoneUseAsEmail
         this.accountUID = accountUID
+        this.accountDetails = accountDetails
 
     }
 }

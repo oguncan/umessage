@@ -5,12 +5,15 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
 import com.google.firebase.auth.FirebaseAuth
-import com.oguncan.umessage.Home.HomeActivity
+import com.google.firebase.database.*
 import com.oguncan.umessage.Login.LoginActivity
+import com.oguncan.umessage.Model.Account
 import com.oguncan.umessage.R
 import com.oguncan.umessage.utils.BottomNavigationViewHelper
+import com.oguncan.umessage.utils.EventBusDataEvents
 import com.oguncan.umessage.utils.UniversalImageLoader
 import kotlinx.android.synthetic.main.activity_profile.*
+import org.greenrobot.eventbus.EventBus
 
 
 class ProfileActivity : AppCompatActivity() {
@@ -18,16 +21,53 @@ class ProfileActivity : AppCompatActivity() {
     private val TAG = "ProfileActivity"
     lateinit var mAuth : FirebaseAuth
     lateinit var mAuthListener : FirebaseAuth.AuthStateListener
-    //lateinit var mAuthListener : FirebaseAuth.AuthStateListener
+    lateinit var mRef : DatabaseReference
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_profile)
         setupAuthListener()
         mAuth = FirebaseAuth.getInstance()
+        mRef = FirebaseDatabase.getInstance().reference
         setupToolBar()
         setupNavigationView()
+        getAccountInfos()
         fragmentNavigations()
-        setupProfileImage()
+    }
+    fun getAccountInfos(){
+        //var accountInfo : Account? = null
+        mRef.child("Accounts").child(FirebaseAuth.getInstance().currentUser!!.uid.toString()).addValueEventListener(
+            object : ValueEventListener{
+                override fun onCancelled(p0: DatabaseError) {
+                }
+                override fun onDataChange(p0: DataSnapshot) {
+                    if(p0.getValue()!=null){
+                        var accountInfo = p0.getValue(Account::class.java)
+
+                        EventBus.getDefault().postSticky(EventBusDataEvents.SendAccountInfo(accountInfo!!))
+
+                        txtProfileToolbarUsername.text = accountInfo!!.accountUsername.toString()
+                        txtProfileRealName.text = accountInfo!!.accountNameAndSurname.toString()
+                        txtProfileShareCount.text = accountInfo!!.accountDetails!!.detailsPosts.toString()
+                        txtProfileFollower.text = accountInfo!!.accountDetails!!.detailsFollower.toString()
+                        txtProfileFollow.text = accountInfo!!.accountDetails!!.detailsFollow.toString()
+                        var imgURL: String = accountInfo!!.accountDetails!!.detailsProfilePicture.toString()
+                        UniversalImageLoader.setImage(imgURL, imgProfilePhoto, progressBarProfile, "")
+                        if(!accountInfo!!.accountDetails!!.detailsComment.toString().isNullOrEmpty() &&
+                            !(accountInfo!!.accountDetails!!.detailsComment.toString() == "0")){
+                            txtProfilePersonInfos.text = accountInfo!!.accountDetails!!.detailsComment.toString()
+                        }
+                        if(!accountInfo!!.accountDetails!!.detailsWebsite.toString().isNullOrEmpty() &&
+                            !(accountInfo!!.accountDetails!!.detailsWebsite.toString() == "0")    ){
+                            txtProfileWebsite.text = accountInfo!!.accountDetails!!.detailsWebsite.toString()
+                        }
+
+                    }
+                }
+            }
+        )
+
+
     }
     fun setupNavigationView(){
         BottomNavigationViewHelper.setupBottomNavigationView(profileBottomNavigationView)
@@ -86,10 +126,7 @@ class ProfileActivity : AppCompatActivity() {
         super.onBackPressed()
     }
 
-    fun setupProfileImage(){
-        var imageURL = "https://i.pinimg.com/originals/60/ac/92/60ac920f4efedd79f815c206e654275f.jpg"
-        UniversalImageLoader.setImage(imageURL, imgRegisterPhoto, progressBarProfile, null)
-    }
+
 
 
 

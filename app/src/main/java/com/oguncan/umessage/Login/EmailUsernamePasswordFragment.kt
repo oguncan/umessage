@@ -18,6 +18,7 @@ import com.google.firebase.auth.EmailAuthProvider
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.database.*
 import com.oguncan.umessage.Model.Account
+import com.oguncan.umessage.Model.AccountDetails
 
 import com.oguncan.umessage.R
 import com.oguncan.umessage.utils.EventBusDataEvents
@@ -87,13 +88,15 @@ class EmailUsernamePasswordFragment : Fragment() {
                                                 view.progressBarNameAndPassword.visibility = View.GONE
                                                 //Toast.makeText(activity!!, "Kullanıcı kaydı gerçekleştirildi!", Toast.LENGTH_LONG).show()
                                                 //Save information of user who sign in success
+                                                var saveAccountDetails = AccountDetails("0","0","0","0","0","0")
                                                 var saveAccount = Account(comingEmailValue,
                                                     view.editTextNameAndPasswordNameAndSurname.text.toString(),
                                                     view.editTextNameAndPasswordPassword.text.toString(),
                                                     view.editTextNameAndPasswordUsername.text.toString().toLowerCase(),
                                                     "",
                                                     "",
-                                                    mAuth.currentUser!!.uid.toString())
+                                                    mAuth.currentUser!!.uid.toString(),
+                                                            saveAccountDetails)
                                                 mRef.child("Accounts").child(mAuth.currentUser!!.uid).setValue(saveAccount)
                                                     .addOnCompleteListener(object : OnCompleteListener<Void>{
                                                         override fun onComplete(p0: Task<Void>) {
@@ -129,13 +132,16 @@ class EmailUsernamePasswordFragment : Fragment() {
                                                 view.progressBarNameAndPassword.visibility = View.GONE
                                                 //Toast.makeText(activity!!, "Oturum Açıldı!", Toast.LENGTH_LONG).show()
                                                 //Save information of user who sign in success
+                                                var saveAccountDetails = AccountDetails("0","0","0","0","0","0")
                                                 var saveAccount = Account("",
                                                     view.editTextNameAndPasswordNameAndSurname.text.toString(),
                                                     view.editTextNameAndPasswordPassword.text.toString(),
                                                     view.editTextNameAndPasswordUsername.text.toString().toLowerCase(),
                                                     telNo,
                                                     fakeMailAddress,
-                                                    mAuth.currentUser!!.uid.toString())
+                                                    mAuth.currentUser!!.uid.toString(),
+                                                    saveAccountDetails
+                                                    )
                                                 mRef.child("Accounts").child(mAuth.currentUser!!.uid).setValue(saveAccount)
                                                     .addOnCompleteListener(object : OnCompleteListener<Void>{
                                                         override fun onComplete(p0: Task<Void>) {
@@ -162,9 +168,9 @@ class EmailUsernamePasswordFragment : Fragment() {
                                     })
                             }
                         }
-
                     }
                 }
+
 
             })
         }

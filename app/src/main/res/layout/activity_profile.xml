@@ -55,7 +55,7 @@
             app:layout_constraintTop_toBottomOf="@+id/imgProfileToolbarDiscover" />
 
         <de.hdodenhof.circleimageview.CircleImageView
-            android:id="@+id/imgRegisterPhoto"
+            android:id="@+id/imgProfilePhoto"
             android:layout_width="96dp"
             android:layout_height="96dp"
             android:layout_marginStart="16dp"
@@ -78,8 +78,8 @@
             android:textSize="18sp"
             android:textStyle="bold"
             app:layout_constraintEnd_toStartOf="@+id/txtProfileFollower"
-            app:layout_constraintStart_toEndOf="@+id/imgRegisterPhoto"
-            app:layout_constraintTop_toTopOf="@+id/imgRegisterPhoto" />
+            app:layout_constraintStart_toEndOf="@+id/imgProfilePhoto"
+            app:layout_constraintTop_toTopOf="@+id/imgProfilePhoto" />
 
         <TextView
             android:id="@+id/txtProfileFollower"
@@ -95,7 +95,7 @@
             app:layout_constraintEnd_toStartOf="@+id/txtProfileFollow"
             app:layout_constraintHorizontal_bias="0.56"
             app:layout_constraintStart_toEndOf="@+id/txtProfileShareCount"
-            app:layout_constraintTop_toTopOf="@+id/imgRegisterPhoto" />
+            app:layout_constraintTop_toTopOf="@+id/imgProfilePhoto" />
 
         <TextView
             android:id="@+id/txtProfileFollow"
@@ -111,7 +111,7 @@
             app:layout_constraintBottom_toBottomOf="@+id/txtProfileFollower"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toEndOf="@+id/txtProfileFollower"
-            app:layout_constraintTop_toTopOf="@+id/imgRegisterPhoto"
+            app:layout_constraintTop_toTopOf="@+id/imgProfilePhoto"
             app:layout_constraintVertical_bias="0.0" />
 
         <TextView
@@ -158,9 +158,9 @@
             android:text="Profili Düzenle"
             android:textAlignment="center"
             android:textColor="@color/black"
-            app:layout_constraintBottom_toBottomOf="@+id/imgRegisterPhoto"
+            app:layout_constraintBottom_toBottomOf="@+id/imgProfilePhoto"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toEndOf="@+id/imgRegisterPhoto" />
+            app:layout_constraintStart_toEndOf="@+id/imgProfilePhoto" />
 
         <TextView
             android:id="@+id/txtProfileRealName"
@@ -172,7 +172,7 @@
             android:textColor="@color/black"
             android:textStyle="bold"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/imgRegisterPhoto" />
+            app:layout_constraintTop_toBottomOf="@+id/imgProfilePhoto" />
 
         <TextView
             android:id="@+id/txtProfilePersonInfos"
@@ -180,7 +180,6 @@
             android:layout_height="wrap_content"
             android:layout_marginStart="16dp"
             android:layout_marginTop="4dp"
-            android:text="software engineering"
             android:textColor="@color/black"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/txtProfileRealName" />
@@ -198,12 +197,23 @@
         <ProgressBar
             android:id="@+id/progressBarProfile"
             style="?android:attr/progressBarStyle"
+            android:visibility="gone"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            app:layout_constraintBottom_toBottomOf="@+id/imgRegisterPhoto"
-            app:layout_constraintEnd_toEndOf="@+id/imgRegisterPhoto"
-            app:layout_constraintStart_toStartOf="@+id/imgRegisterPhoto"
-            app:layout_constraintTop_toTopOf="@+id/imgRegisterPhoto" />
+            app:layout_constraintBottom_toBottomOf="@+id/imgProfilePhoto"
+            app:layout_constraintEnd_toEndOf="@+id/imgProfilePhoto"
+            app:layout_constraintStart_toStartOf="@+id/imgProfilePhoto"
+            app:layout_constraintTop_toTopOf="@+id/imgProfilePhoto" />
+
+        <TextView
+            android:id="@+id/txtProfileWebsite"
+            android:layout_width="300dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="4dp"
+            android:textColor="@color/black"
+            app:layout_constraintEnd_toEndOf="@+id/txtProfilePersonInfos"
+            app:layout_constraintStart_toStartOf="@+id/txtProfilePersonInfos"
+            app:layout_constraintTop_toBottomOf="@+id/txtProfilePersonInfos" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 
     <FrameLayout

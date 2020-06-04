@@ -29,17 +29,23 @@ class UniversalImageLoader(val mContext : Context?) {
                 .cacheInMemory(true)
                 .cacheOnDisk(true).resetViewBeforeLoading(true)
                 .imageScaleType(ImageScaleType.EXACTLY)
+                .considerExifParams(true)
+                .bitmapConfig(Bitmap.Config.RGB_565)
                 .displayer(FadeInBitmapDisplayer(400))
                 .build()
             return ImageLoaderConfiguration.Builder(mContext)
                 .defaultDisplayImageOptions(defaultOptions).memoryCache(WeakMemoryCache())
+                .memoryCacheSize(1048576 * 15)
+                .threadPriority(Thread.MIN_PRIORITY + 3)
+                .threadPoolSize(3)
+//                .diskCacheExtraOptions(480,320,null)
                 .diskCacheSize(100*1024*1024).build()
 
         }
     companion object{
         private val defaultImage = R.drawable.ic_logo
 
-        fun setImage(imgURL : String, imageView : CircleImageView, mProgressBar : ProgressBar?, firstPart : String?){
+        fun setImage(imgURL : String, imageView : ImageView, mProgressBar : ProgressBar?, firstPart : String?){
             val imageLoader = ImageLoader.getInstance()
             imageLoader.displayImage(imgURL, imageView, object:ImageLoadingListener{
                 override fun onLoadingComplete(

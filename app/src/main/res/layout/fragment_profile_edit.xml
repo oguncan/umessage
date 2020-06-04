@@ -95,11 +95,11 @@
             tools:context=".Profile.ProfileEditFragment">
 
             <de.hdodenhof.circleimageview.CircleImageView
-                android:id="@+id/imgRegisterPhoto"
+                android:id="@+id/imgProfilePhoto"
                 android:layout_width="96dp"
                 android:layout_height="96dp"
                 android:layout_marginTop="16dp"
-                android:src="@drawable/ic_profile"
+                android:src="@drawable/ic_logo"
                 app:civ_border_color="@color/colorPrimaryDark"
                 app:civ_border_width="2dp"
                 app:layout_constraintEnd_toEndOf="parent"
@@ -114,9 +114,9 @@
                 android:text="Fotoğrafı Değiştir"
                 android:textColor="@color/blue"
                 android:textSize="18sp"
-                app:layout_constraintEnd_toEndOf="@+id/imgRegisterPhoto"
-                app:layout_constraintStart_toStartOf="@+id/imgRegisterPhoto"
-                app:layout_constraintTop_toBottomOf="@+id/imgRegisterPhoto" />
+                app:layout_constraintEnd_toEndOf="@+id/imgProfilePhoto"
+                app:layout_constraintStart_toStartOf="@+id/imgProfilePhoto"
+                app:layout_constraintTop_toBottomOf="@+id/imgProfilePhoto" />
 
             <TextView
                 android:id="@+id/txtEditProfileName"
@@ -125,7 +125,7 @@
                 android:layout_marginStart="16dp"
                 android:layout_marginTop="8dp"
                 android:layout_marginEnd="16dp"
-                android:text="Ad"
+                android:text="Ad ve Soyad"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/txtEditProfileChangePhoto" />
@@ -144,27 +144,27 @@
                 app:layout_constraintTop_toBottomOf="@+id/txtEditProfileName" />
 
             <TextView
-                android:id="@+id/txtEditProfileSurname"
+                android:id="@+id/txtEditProfileUsername"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="8dp"
-                android:text="Soyad"
+                android:text="Username"
                 app:layout_constraintEnd_toEndOf="@+id/edtTextEditProfileName"
                 app:layout_constraintStart_toStartOf="@+id/edtTextEditProfileName"
                 app:layout_constraintTop_toBottomOf="@+id/edtTextEditProfileName" />
 
             <EditText
-                android:id="@+id/edtTextProfileEditSurname"
+                android:id="@+id/edtTextProfileEditUsername"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="8dp"
                 android:backgroundTint="@color/blue"
                 android:ems="10"
                 android:inputType="textPersonName"
-                android:text="surname"
-                app:layout_constraintEnd_toEndOf="@+id/txtEditProfileSurname"
-                app:layout_constraintStart_toStartOf="@+id/txtEditProfileSurname"
-                app:layout_constraintTop_toBottomOf="@+id/txtEditProfileSurname" />
+                android:text="username"
+                app:layout_constraintEnd_toEndOf="@+id/txtEditProfileUsername"
+                app:layout_constraintStart_toStartOf="@+id/txtEditProfileUsername"
+                app:layout_constraintTop_toBottomOf="@+id/txtEditProfileUsername" />
 
             <TextView
                 android:id="@+id/txtEditProfileWebsite"
@@ -172,9 +172,9 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="8dp"
                 android:text="Website"
-                app:layout_constraintEnd_toEndOf="@+id/edtTextProfileEditSurname"
-                app:layout_constraintStart_toStartOf="@+id/edtTextProfileEditSurname"
-                app:layout_constraintTop_toBottomOf="@+id/edtTextProfileEditSurname" />
+                app:layout_constraintEnd_toEndOf="@+id/edtTextProfileEditUsername"
+                app:layout_constraintStart_toStartOf="@+id/edtTextProfileEditUsername"
+                app:layout_constraintTop_toBottomOf="@+id/edtTextProfileEditUsername" />
 
             <EditText
                 android:id="@+id/edtTextProfileEditWebsite"

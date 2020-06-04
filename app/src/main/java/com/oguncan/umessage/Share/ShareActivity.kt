@@ -4,7 +4,9 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import com.oguncan.umessage.R
 import com.oguncan.umessage.utils.BottomNavigationViewHelper
+import com.oguncan.umessage.utils.SharePagerAdapter
 import kotlinx.android.synthetic.main.activity_home.*
+import kotlinx.android.synthetic.main.activity_share.*
 
 class ShareActivity : AppCompatActivity() {
     private val ACTIVITY_NO = 2
@@ -12,14 +14,27 @@ class ShareActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_share)
-        setupNavigationView()
+        setupViewPagerItems()
+
     }
 
-    fun setupNavigationView(){
-        BottomNavigationViewHelper.setupBottomNavigationView(homeBottomNavigationView)
-        BottomNavigationViewHelper.setupNavigation(this,homeBottomNavigationView)
-        var menu = homeBottomNavigationView.menu
-        var menuItem = menu.getItem(ACTIVITY_NO)
-        menuItem.setChecked(true)
+    private fun setupViewPagerItems() {
+
+        var tabLayoutItemNames = ArrayList<String>()
+        tabLayoutItemNames.add("GALERİ")
+        tabLayoutItemNames.add("FOTOĞRAF")
+        tabLayoutItemNames.add("VİDEO")
+
+
+        var sharePagerAdapter = SharePagerAdapter(supportFragmentManager, tabLayoutItemNames)
+        sharePagerAdapter.fragmentAdd(ShareGalleryFragment())
+        sharePagerAdapter.fragmentAdd(ShareCameraFragment())
+        sharePagerAdapter.fragmentAdd(ShareVideoFragment())
+        shareViewPager.adapter = sharePagerAdapter
+        shareTabLayout.setupWithViewPager(shareViewPager)
+
+
     }
+
+
 }
