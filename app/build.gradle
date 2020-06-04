@@ -66,4 +66,10 @@ dependencies {
     //Firestore
     implementation 'com.google.firebase:firebase-storage-ktx:19.1.1'
 
+    //Videoview
+    implementation 'com.linsea:universalvideoview:1.1.0@aar'
+
+    //image crop
+    implementation "com.naver.android.helloyako:imagecropview:1.2.3"
+
 }

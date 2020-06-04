@@ -2,6 +2,7 @@ package com.oguncan.umessage.Share
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.view.View
 import com.oguncan.umessage.R
 import com.oguncan.umessage.utils.BottomNavigationViewHelper
 import com.oguncan.umessage.utils.SharePagerAdapter
@@ -34,6 +35,12 @@ class ShareActivity : AppCompatActivity() {
         shareTabLayout.setupWithViewPager(shareViewPager)
 
 
+    }
+
+    override fun onBackPressed() {
+        shareLayoutRoot.visibility = View.VISIBLE
+        shareLayoutContainer.visibility = View.GONE
+        super.onBackPressed()
     }
 
 

@@ -26,4 +26,17 @@
         app:layout_constraintEnd_toEndOf="@+id/shareGridViewPhotos"
         app:layout_constraintStart_toStartOf="@+id/shareGridViewPhotos"
         app:layout_constraintTop_toTopOf="@+id/shareGridViewPhotos" />
+
+    <TextView
+        android:id="@+id/shareGridViewTime"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="2dp"
+        android:layout_marginBottom="2dp"
+        android:text="TextView"
+        android:textColor="@color/white"
+        android:textSize="14sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
 </androidx.constraintlayout.widget.ConstraintLayout>
