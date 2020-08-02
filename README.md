@@ -1,5 +1,6 @@
 # umessage Firebase, UniversalImageLoader, CircleImageView, BottomNavigationViewEx is used!
 # and! im still working on this project.. im gonna end!
+# Im gonna try to add the necessary image filters to share photos.
 <table><tr>
 <td><img src="https://github.com/oguncan/umessage/blob/master/umessageImages/1.jpg" width="50%"/> </td>
 <td><img src="https://github.com/oguncan/umessage/blob/master/umessageImages/2.jpg" width="50%"/></td>
@@ -25,4 +26,12 @@
 <td><img src="https://github.com/oguncan/umessage/blob/master/umessageImages/10.jpg" width="50%"/></td>
 </tr></table>
 
+<table><tr>
+<td><img src="https://github.com/oguncan/umessage/blob/master/umessageImages/11.jpg" width="50%"/> </td>
+<td><img src="https://github.com/oguncan/umessage/blob/master/umessageImages/12.jpg" width="50%"/></td>
+</tr></table>
+
+<table><tr>
+<td><img src="https://github.com/oguncan/umessage/blob/master/umessageImages/13.jpg" width="50%"/> </td>
+</tr></table>
 
