@@ -16,6 +16,7 @@ class CameraFragment : Fragment() {
     ): View? {
         var view = inflater.inflate(R.layout.fragment_camera, container, false)
         Log.e("Merhaba","Merhaba")
+        Log.e("Merhaba2","Merhaba2")
         return view
     }
 }
