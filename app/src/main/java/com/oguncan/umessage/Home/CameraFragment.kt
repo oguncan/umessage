@@ -19,6 +19,7 @@ class CameraFragment : Fragment() {
         Log.e("Merhaba2","Merhaba2")
         Log.e("Merhaba3","Merhaba3")
         Log.e("Merhaba4","Merhaba4")
+        Log.e("Merhaba44","Merhaba44")
         return view
     }
 }
