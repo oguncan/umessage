@@ -15,7 +15,7 @@ class CameraFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         var view = inflater.inflate(R.layout.fragment_camera, container, false)
-
+        Log.e("Merhaba","merhaba")
         return view
     }
 }
